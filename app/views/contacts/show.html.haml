@@ -1,0 +1,21 @@
+.row
+  .col-sm-6.col-md-4
+    .thumbnail
+      - if @contact.avatar.url
+        = image_tag(@contact.avatar.thumb)
+      - else
+        = image_tag("http://placehold.it/100x100")
+
+      .caption
+        %h3
+          = @contact.fullname
+          - if @contact.tag
+            %span.badge
+              = @contact.tag.name
+        %p
+          = fa('phone')
+          = @contact.phone
+        - if @contact.full_address
+          %p
+            = fa('map-marker')
+            = @contact.full_address

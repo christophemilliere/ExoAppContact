@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title AppContact
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          = link_to 'Répertoire', contacts_path, class: "navbar-brand"
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              = link_to 'Ajouter un contact', new_contact_path
+            %li
+              = link_to 'Ajouter un tag', new_tag_path
+            %li
+              = link_to 'Voir les tags', tags_path
+
+    .container
+      = yield

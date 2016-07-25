@@ -1,0 +1,21 @@
+.row
+  .col-sm-6.col-md-4
+    .thumbnail
+      - if @contact.avatar.url
+        = wicked_pdf_image_tag(@contact.avatar.thumb)
+
+      .caption
+        %h3
+          = @contact.fullname
+          - if @contact.tag
+            %span.badge
+              = @contact.tag.name
+        %p
+          %strong
+            Tel:
+          = @contact.phone
+        - if @contact.full_address
+          %p
+            %strong
+              Adresse:
+            = @contact.full_address

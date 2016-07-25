@@ -1,0 +1,10 @@
+%html
+  %head
+    = wicked_pdf_stylesheet_link_tag "application"
+    %meta{ "http-equiv" => "content-type", content: "text/html; charset=utf-8" }
+  %body
+    #header
+      Contact du répertoire
+
+    .container
+      = yield

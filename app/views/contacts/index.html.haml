@@ -1,0 +1,48 @@
+.container
+  - alphabetic = ("a".."z").to_a
+  .text-center
+    = link_to "Tous les contacts", contacts_path(letter: nil), class: "lead text-uppercase"
+    |
+    - alphabetic.each do |l|
+      = link_to l, contacts_path(letter: "#{l.capitalize}"), class: "lead text-uppercase"
+
+  - if @contact.any?
+    %table.table.table-hover
+      %tr
+        %td
+          %strong
+            Nom complet
+        %td
+          %strong
+            Tag
+        %td
+          %strong
+            Voir
+        %td
+          %strong
+            Modifier
+        %td
+          %strong
+            Supprimer
+        %td
+          %strong
+            Exporter en PDF
+
+      - @contact.each do |c|
+        %tr
+          %td
+            = c.fullname
+          %td
+            - if c.tag
+              .badge
+                = c.tag.name
+          %td
+            = link_to "Voir", contact_path(c), class: 'btn btn-success'
+          %td
+            = link_to "Editer", edit_contact_path(c), class: 'btn btn-primary'
+          %td
+            = link_to "Supprimer", contact_path(c), method: :delete, class: 'btn btn-danger'
+          %td
+            = link_to "Exporter le contact en pdf", contact_path(c, format: "pdf"), class: 'btn btn-info'
+  -else
+    %p Pas de contact de trouver

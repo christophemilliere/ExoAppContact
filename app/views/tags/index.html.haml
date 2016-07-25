@@ -1,0 +1,26 @@
+
+.container
+  - if @tags.any?
+    %table.table.table-hover
+      %tr
+        %td
+          Nom du tag
+        %td
+          Voir
+        %td
+          Modifier
+        %td
+          Supprimer
+
+      - @tags.each do |t|
+        %tr
+          %td
+            = t.name
+          %td
+            = link_to "Voir", tag_path(t)
+          %td
+            = link_to "Editer", edit_tag_path(t)
+          %td
+            = link_to "Supprimer", tag_path(t), method: :delete
+  -else
+    %p Pas de contact de trouver

@@ -1,0 +1,4 @@
+= simple_form_for @tag do |f|
+  = f.input :name, placeholder: "Nom", label: "Nom du tag", error: "Veuillez ajouter un nom pour votre tag"
+  %br
+  = f.button :submit, "Ajouter", class: "btn btn-primary"
