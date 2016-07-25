@@ -2,9 +2,9 @@
   - if @contact.avatar.url
     = image_tag(@contact.avatar.thumb)
   = f.input :avatar, as: :file, label: "Photo"
-  = f.input :lastname, placeholder: "Nom", label: "Nom", error: "Vous devez rentrer un nom."
+  = f.input :lastname, placeholder: "Nom", label: "Nom", error: "Vous devez saisir un nom."
   = f.input :firstname, placeholder: "Prénom", label: "Prénom"
-  = f.input :phone, placeholder: "0148780978", label: "Téléphone",  error: "Vous devez rentrer un numéro de téléphone."
+  = f.input :phone, placeholder: "0148780978", label: "Téléphone",  error: "Vous devez saisir un numéro de téléphone."
   = f.input :address, placeholder: "15 av charles de gaulle", label: "addresse"
   = f.input :cp, placeholder: "75000", label: "Code postal"
   = f.input :city, placeholder: "Paris", label: "ville"

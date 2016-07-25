@@ -37,9 +37,9 @@
               .badge
                 = c.tag.name
           %td
-            = link_to "Voir", contact_path(c), class: 'btn btn-success'
+            = link_to "Voir", contact_path(c), class: 'btn btn-primary'
           %td
-            = link_to "Editer", edit_contact_path(c), class: 'btn btn-primary'
+            = link_to "Editer", edit_contact_path(c), class: 'btn btn-warning'
           %td
             = link_to "Supprimer", contact_path(c), method: :delete, class: 'btn btn-danger'
           %td
